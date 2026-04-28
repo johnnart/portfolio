@@ -1,0 +1,194 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d4f4f;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#0f6969;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00857a;stop-opacity:1" />
+    </linearGradient>
+
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="20" stdDeviation="30" flood-opacity="0.4"/>
+    </filter>
+
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="40" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <linearGradient id="tealGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00BFA5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1DE9B6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#bgGradient)"/>
+
+  <!-- Grid pattern -->
+  <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+    <path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(0,191,165,0.05)" stroke-width="1"/>
+  </pattern>
+  <rect width="1200" height="675" fill="url(#grid)" opacity="0.5"/>
+
+  <!-- Decorative hearts -->
+  <g opacity="0.15">
+    <text x="150" y="120" font-size="24" fill="#00BFA5">❤️</text>
+    <text x="980" y="180" font-size="20" fill="#1DE9B6">❤️</text>
+    <text x="1050" y="480" font-size="22" fill="#00BFA5">❤️</text>
+  </g>
+
+  <!-- Glow effects -->
+  <ellipse cx="300" cy="200" rx="200" ry="200" fill="#00BFA5" opacity="0.1" filter="url(#glow)"/>
+  <ellipse cx="900" cy="500" rx="180" ry="180" fill="#1DE9B6" opacity="0.08" filter="url(#glow)"/>
+
+  <!-- Primary Screen: Homepage -->
+  <g transform="translate(80, 90)" filter="url(#shadow)">
+    <!-- Screen container -->
+    <rect width="620" height="480" rx="12" fill="#f5f5f5"/>
+
+    <!-- Header -->
+    <rect width="620" height="50" rx="12" fill="#ffffff"/>
+    <rect y="50" width="620" height="1" fill="#e0e0e0"/>
+
+    <!-- Logo area -->
+    <text x="20" y="32" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#00BFA5">Geenees</text>
+
+    <!-- Hero section with teal background -->
+    <rect y="51" width="620" height="140" fill="#00BFA5"/>
+
+    <!-- Hero text -->
+    <text x="30" y="100" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="900" fill="#ffffff">Become a</text>
+    <text x="30" y="135" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="900" fill="#ffffff">Geenee</text>
+
+    <!-- Decorative clouds -->
+    <ellipse cx="480" cy="100" rx="30" ry="18" fill="#ffffff" opacity="0.3"/>
+    <ellipse cx="510" cy="105" rx="25" ry="15" fill="#ffffff" opacity="0.3"/>
+    <ellipse cx="540" cy="130" rx="35" ry="20" fill="#ffffff" opacity="0.3"/>
+
+    <!-- Content area -->
+    <rect y="191" width="620" height="289" fill="#fafafa"/>
+
+    <!-- Section title -->
+    <text x="30" y="225" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#1a202c">Meet Families</text>
+
+    <!-- Family cards -->
+    <g transform="translate(30, 245)">
+      <!-- Card 1 -->
+      <rect width="170" height="190" rx="8" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+
+      <!-- Card image placeholder (family illustration) -->
+      <rect x="10" y="10" width="150" height="100" rx="6" fill="#f0f9ff"/>
+      <text x="85" y="65" font-family="system-ui, -apple-system, sans-serif" font-size="36" text-anchor="middle">👨‍👩‍👧</text>
+
+      <!-- Card content -->
+      <text x="15" y="125" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" fill="#1a202c">Family of 4 in Vancouver</text>
+      <rect x="15" y="133" width="140" height="3" rx="1" fill="#d1d5db"/>
+      <rect x="15" y="140" width="130" height="3" rx="1" fill="#d1d5db"/>
+      <rect x="15" y="147" width="120" height="3" rx="1" fill="#d1d5db"/>
+
+      <!-- View Wishlist button -->
+      <rect x="15" y="158" width="85" height="22" rx="6" fill="#00BFA5"/>
+      <text x="57.5" y="173" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="600" fill="#ffffff" text-anchor="middle">View Wishlist</text>
+
+      <!-- Card 2 -->
+      <g transform="translate(190, 0)">
+        <rect width="170" height="190" rx="8" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+
+        <rect x="10" y="10" width="150" height="100" rx="6" fill="#fef3c7"/>
+        <text x="85" y="65" font-family="system-ui, -apple-system, sans-serif" font-size="36" text-anchor="middle">👨‍👦</text>
+
+        <text x="15" y="125" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" fill="#1a202c">Family of 2 in Burnaby</text>
+        <rect x="15" y="133" width="140" height="3" rx="1" fill="#d1d5db"/>
+        <rect x="15" y="140" width="120" height="3" rx="1" fill="#d1d5db"/>
+        <rect x="15" y="147" width="135" height="3" rx="1" fill="#d1d5db"/>
+
+        <rect x="15" y="158" width="85" height="22" rx="6" fill="#00BFA5"/>
+        <text x="57.5" y="173" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="600" fill="#ffffff" text-anchor="middle">View Wishlist</text>
+      </g>
+
+      <!-- Card 3 -->
+      <g transform="translate(380, 0)">
+        <rect width="170" height="190" rx="8" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+
+        <rect x="10" y="10" width="150" height="100" rx="6" fill="#ffe4e6"/>
+        <text x="85" y="65" font-family="system-ui, -apple-system, sans-serif" font-size="36" text-anchor="middle">👨‍👩‍👧‍👦</text>
+
+        <text x="15" y="125" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" fill="#1a202c">Family of 5 in Vancouver</text>
+        <rect x="15" y="133" width="140" height="3" rx="1" fill="#d1d5db"/>
+        <rect x="15" y="140" width="125" height="3" rx="1" fill="#d1d5db"/>
+        <rect x="15" y="147" width="130" height="3" rx="1" fill="#d1d5db"/>
+
+        <rect x="15" y="158" width="85" height="22" rx="6" fill="#00BFA5"/>
+        <text x="57.5" y="173" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="600" fill="#ffffff" text-anchor="middle">View Wishlist</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Secondary Screen: Family Wishlist Detail -->
+  <g transform="translate(500, 120)" filter="url(#shadow)">
+    <!-- Screen container -->
+    <rect width="620" height="450" rx="12" fill="#f5f5f5"/>
+
+    <!-- Header with back button -->
+    <rect width="620" height="50" fill="#00BFA5"/>
+    <text x="20" y="32" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" fill="#ffffff">← Back to Other Wishlists</text>
+
+    <!-- Family title section -->
+    <rect y="51" width="620" height="60" fill="#00BFA5"/>
+    <text x="30" y="88" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" fill="#ffffff">Meet Family of 3 in Vancouver</text>
+
+    <!-- Content area -->
+    <rect y="111" width="620" height="339" fill="#fafafa"/>
+
+    <!-- Our Story card -->
+    <g transform="translate(30, 130)">
+      <rect width="560" height="100" rx="8" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+
+      <!-- Family illustration -->
+      <rect x="15" y="15" width="70" height="70" rx="6" fill="#f0f9ff"/>
+      <text x="50" y="58" font-family="system-ui, -apple-system, sans-serif" font-size="28" text-anchor="middle">👨‍👩‍👧</text>
+
+      <!-- Story text -->
+      <text x="100" y="28" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="700" fill="#1a202c">Our Story</text>
+      <rect x="100" y="35" width="440" height="4" rx="2" fill="#d1d5db"/>
+      <rect x="100" y="44" width="420" height="4" rx="2" fill="#d1d5db"/>
+      <rect x="100" y="53" width="450" height="4" rx="2" fill="#d1d5db"/>
+      <rect x="100" y="62" width="400" height="4" rx="2" fill="#d1d5db"/>
+      <rect x="100" y="71" width="380" height="4" rx="2" fill="#d1d5db"/>
+    </g>
+
+    <!-- Our Wishlist section -->
+    <text x="30" y="260" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="700" fill="#1a202c">Our Wishlist</text>
+
+    <!-- Wishlist items -->
+    <g transform="translate(30, 270)">
+      <!-- Item 1 -->
+      <rect width="560" height="50" rx="6" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+      <rect x="15" y="15" width="35" height="20" rx="4" fill="#f3f4f6"/>
+      <rect x="60" y="12" width="200" height="6" rx="3" fill="#1a202c" opacity="0.8"/>
+      <rect x="60" y="24" width="180" height="5" rx="2" fill="#9ca3af"/>
+      <rect x="480" y="20" width="60" height="10" rx="4" fill="#d1d5db"/>
+
+      <!-- Item 2 -->
+      <g transform="translate(0, 58)">
+        <rect width="560" height="50" rx="6" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+        <rect x="15" y="15" width="35" height="20" rx="4" fill="#f3f4f6"/>
+        <rect x="60" y="12" width="180" height="6" rx="3" fill="#1a202c" opacity="0.8"/>
+        <rect x="60" y="24" width="200" height="5" rx="2" fill="#9ca3af"/>
+        <rect x="480" y="20" width="60" height="10" rx="4" fill="#d1d5db"/>
+      </g>
+
+      <!-- Item 3 (Granted) -->
+      <g transform="translate(0, 116)">
+        <rect width="560" height="50" rx="6" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/>
+        <rect x="15" y="15" width="35" height="20" rx="4" fill="#f3f4f6"/>
+        <rect x="60" y="12" width="180" height="6" rx="3" fill="#1a202c" opacity="0.6"/>
+        <rect x="60" y="24" width="160" height="5" rx="2" fill="#9ca3af"/>
+        <rect x="480" y="20" width="60" height="10" rx="4" fill="#10b981" opacity="0.3"/>
+      </g>
+    </g>
+  </g>
+</svg>

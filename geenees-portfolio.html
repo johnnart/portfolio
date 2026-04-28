@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geenees - John Tran</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #0f0f0f;
+            color: #ffffff;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 300px;
+            background: radial-gradient(circle at 50% 0%, rgba(0, 191, 165, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            z-index: 1000;
+            background: rgba(0, 191, 165, 0.9);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .back-button:hover {
+            background: rgba(0, 191, 165, 1);
+            transform: translateX(-4px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        section {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 6rem 0;
+            border-bottom: 1px solid #404040;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #00BFA5 0%, #1DE9B6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: #d4d4d4;
+            margin-bottom: 3rem;
+        }
+
+        .meta {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            text-align: left;
+            background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%);
+            border: 2px solid #404040;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .meta-item:hover {
+            border-color: #00BFA5;
+            transform: translateY(-2px);
+        }
+
+        .meta-item strong {
+            display: block;
+            color: #00BFA5;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.3rem;
+        }
+
+        .meta-item span {
+            color: #ffffff;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        /* Section */
+        section {
+            padding: 4rem 0;
+            border-bottom: 1px solid #404040;
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            color: #ffffff;
+            letter-spacing: -1px;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #00BFA5 0%, #1DE9B6 100%);
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #00BFA5;
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #d4d4d4;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        /* Problem/Solution Cards */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%);
+            border: 2px solid #404040;
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 191, 165, 0.1) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: #00BFA5;
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 191, 165, 0.2);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card h3 {
+            margin-top: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .card ul li {
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.8rem;
+            color: #d4d4d4;
+        }
+
+        .card ul li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #00BFA5;
+            font-weight: 900;
+        }
+
+        /* Process */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .process-step {
+            background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%);
+            border: 2px solid #404040;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .process-step:hover {
+            border-color: #00BFA5;
+            transform: translateY(-5px);
+        }
+
+        .process-step:hover .process-number {
+            animation: float 2s ease-in-out infinite;
+        }
+
+        .process-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #00BFA5 0%, #1DE9B6 100%);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 900;
+            margin: 0 auto 1rem;
+            box-shadow: 0 4px 15px rgba(0, 191, 165, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .process-step strong {
+            display: block;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+
+        .process-step span {
+            font-size: 0.9rem;
+            color: #d4d4d4;
+        }
+
+        /* Key Findings */
+        .findings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .finding-card {
+            background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%);
+            border: 2px solid #00BFA5;
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .finding-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 40px rgba(0, 191, 165, 0.3);
+        }
+
+        .finding-card h3 {
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+
+        /* Image placeholder */
+        .image-showcase {
+            background: transparent;
+            border: none;
+            border-radius: 12px;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-top: 2rem;
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .image-showcase {
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .image-showcase:hover {
+            transform: translateY(-4px);
+        }
+
+        .image-showcase img {
+            max-width: 70%;
+            height: 400px;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(0, 191, 165, 0.2);
+            display: block;
+            margin: 0 auto;
+        }
+
+        .image-showcase::after {
+            content: '🔍 Click to expand';
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 191, 165, 0.9);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .image-showcase:hover::after {
+            opacity: 1;
+        }
+
+        /* Lightbox Modal */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: 12px;
+            box-shadow: 0 20px 80px rgba(0, 0, 0, 0.8);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            color: white;
+            cursor: pointer;
+            background: rgba(0, 191, 165, 0.8);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 300;
+            line-height: 1;
+        }
+
+        .lightbox-close:hover {
+            background: rgba(0, 191, 165, 1);
+        }
+
+        /* Metrics */
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .metric {
+            background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%);
+            border: 2px solid #00BFA5;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .metric::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 191, 165, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .metric:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 40px rgba(0, 191, 165, 0.3);
+        }
+
+        .metric:hover::before {
+            opacity: 1;
+        }
+
+        .metric h3 {
+            margin-top: 0;
+            font-size: 1.3rem;
+        }
+
+        /* Takeaways */
+        .takeaway-list {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .takeaway-list li {
+            background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%);
+            border-left: 4px solid #00BFA5;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .takeaway-list li:hover {
+            background: linear-gradient(135deg, #2f2f2f 0%, #242424 100%);
+            transform: translateX(8px);
+        }
+
+        .takeaway-list li strong {
+            color: #00BFA5;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 3rem 0;
+            color: #666;
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        a:focus,
+        button:focus,
+        .card:focus-within {
+            outline: 3px solid #00BFA5;
+            outline-offset: 2px;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #00BFA5;
+            color: #fff;
+            padding: 8px 16px;
+            text-decoration: none;
+            z-index: 100;
+            border-radius: 0 0 4px 0;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<a href="index.html" class="back-button">← Back to Portfolio</a>
+
+<div class="container">
+
+    <main id="main-content">
+
+    <!-- Hero -->
+    <header class="hero" role="banner">
+        <h1>Geenees</h1>
+        <p class="subtitle">Building a transparent social gifting platform that connects donors with families in need</p>
+
+        <div class="meta">
+            <div class="meta-item">
+                <strong>Role</strong>
+                <span>Product Designer</span>
+            </div>
+            <div class="meta-item">
+                <strong>Company</strong>
+                <span>Geenees</span>
+            </div>
+            <div class="meta-item">
+                <strong>Team</strong>
+                <span>Product, Engineering, Marketing</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Overview -->
+    <section aria-labelledby="overview-heading">
+        <h2 id="overview-heading">Overview</h2>
+        <p>Geenees is a social gifting platform designed to connect donors with families and individuals in need through a transparent, engaging donation experience. The platform allows donors to browse family wishlists, learn their stories, and contribute specific items that make a tangible impact.</p>
+        <p>As Geenees' first product designer, I led user research, created the design system, and designed and launched the donor platform—working closely with developers, product, and marketing to build a solution that fosters trust, transparency, and meaningful connections.</p>
+    </section>
+
+    <!-- Problem -->
+    <section aria-labelledby="problem-heading">
+        <h2 id="problem-heading">The Problem</h2>
+        <p>Despite abundant charitable organizations and generous donors, significant barriers prevent optimal matching between giving and need:</p>
+
+        <div class="card-grid">
+            <div class="card">
+                <h3>Lack of Transparency</h3>
+                <ul>
+                    <li>Donors unsure how donations are used</li>
+                    <li>Uncertainty about actual impact</li>
+                    <li>Limited visibility into recipient needs</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Limited Engagement</h3>
+                <ul>
+                    <li>No meaningful connection with families</li>
+                    <li>Impersonal donation experiences</li>
+                    <li>Lack of emotional resonance</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Friction in Process</h3>
+                <ul>
+                    <li>Inconvenient donation flows</li>
+                    <li>Complex multi-step processes</li>
+                    <li>Barriers to repeat donations</li>
+                </ul>
+            </div>
+        </div>
+
+        <p style="margin-top: 2rem; font-size: 1.2rem;">These barriers reduce donor confidence, limit repeat donations, and prevent families from receiving the support they need in a timely manner.</p>
+    </section>
+
+    <!-- Process -->
+    <section aria-labelledby="process-heading">
+        <h2 id="process-heading">Design Process</h2>
+
+        <div class="process-grid">
+            <div class="process-step">
+                <div class="process-number">1</div>
+                <strong>User Research</strong>
+                <span>Interviewed 10 millennial donors to understand barriers and motivations</span>
+            </div>
+
+            <div class="process-step">
+                <div class="process-number">2</div>
+                <strong>Persona Development</strong>
+                <span>Created user persona to guide design decisions</span>
+            </div>
+
+            <div class="process-step">
+                <div class="process-number">3</div>
+                <strong>Ideation & Wireframes</strong>
+                <span>Explored flows for discovery, connection, and transparency</span>
+            </div>
+
+            <div class="process-step">
+                <div class="process-number">4</div>
+                <strong>Usability Testing</strong>
+                <span>Validated solutions through testing with target users</span>
+            </div>
+
+            <div class="process-step">
+                <div class="process-number">5</div>
+                <strong>High Fidelity Design</strong>
+                <span>Created full design system and final platform designs</span>
+            </div>
+        </div>
+
+        <h3 style="margin-top: 3rem;">User Persona</h3>
+        <p>Michelle, a 25-year-old Environmental Specialist, represents our core donor segment—eager to support causes that matter, seeking transparency and convenience, but constrained by limited resources and time.</p>
+        <div class="image-showcase" onclick="openLightbox(this)">
+            <img src="geenees-persona.svg" alt="User persona: Michelle Norman">
+        </div>
+    </section>
+
+    <!-- Key Findings -->
+    <section aria-labelledby="findings-heading">
+        <h2 id="findings-heading">Key Research Findings</h2>
+        <p>Through interviews with 10 millennial donors, three critical insights emerged:</p>
+
+        <div class="findings-grid">
+            <div class="finding-card">
+                <h3>Financial Constraints</h3>
+                <p style="color: #d4d4d4;">8 participants cited student loans and debts; 5 noted lack of disposable income as primary barriers</p>
+            </div>
+
+            <div class="finding-card">
+                <h3>Trust & Transparency</h3>
+                <p style="color: #d4d4d4;">3 participants concerned about how donations are used; 5 unsure if contributions make an impact</p>
+            </div>
+
+            <div class="finding-card">
+                <h3>Personal Connection</h3>
+                <p style="color: #d4d4d4;">All participants more likely to donate to causes they feel personally connected to</p>
+            </div>
+
+            <div class="finding-card">
+                <h3>Convenience Matters</h3>
+                <p style="color: #d4d4d4;">5 participants preferred to donate without leaving their physical location—digital-first experience essential</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution -->
+    <section aria-labelledby="solution-heading">
+        <h2 id="solution-heading">The Solution</h2>
+        <p>A transparent donor platform built on three core pillars: storytelling, transparency, and ease of use.</p>
+
+        <h3>1. Homepage & Discovery</h3>
+        <p>A welcoming landing page with clear value proposition and easy access to browse families, organizations, and products. The design emphasizes emotional connection while maintaining intuitive navigation.</p>
+        <div class="image-showcase" onclick="openLightbox(this)">
+            <img src="geenees-landing-modern.png" alt="Homepage showing family discovery interface">
+        </div>
+
+        <h3>2. Family Wishlist View</h3>
+        <p>Each family page tells their story and displays their wishlist with clear transparency on impact. Donors can see exactly what each family needs and how their contribution will help.</p>
+        <div class="image-showcase" onclick="openLightbox(this)">
+            <img src="geenees-modern-redesign.png" alt="Family profile page with wishlist items">
+        </div>
+
+        <h3>3. Donation Cart & Checkout</h3>
+        <p>A streamlined cart experience allowing donors to support multiple families in a single transaction. After completing their donation, donors are encouraged to share their contribution to amplify reach and inspire others.</p>
+        <div class="image-showcase" onclick="openLightbox(this)">
+            <img src="geenees-cart-modern.png" alt="Cart and checkout flow with social sharing">
+        </div>
+
+        <h3 style="margin-top: 3rem;">Design Principles</h3>
+        <div class="card-grid">
+            <div class="card">
+                <h3>Storytelling First</h3>
+                <p>Every family's story is front and center—creating emotional resonance and personal connection</p>
+            </div>
+
+            <div class="card">
+                <h3>Radical Transparency</h3>
+                <p>Clear visibility into exactly where donations go and how they're used</p>
+            </div>
+
+            <div class="card">
+                <h3>Frictionless Experience</h3>
+                <p>Streamlined flows that make giving as easy as possible—removing barriers to generosity</p>
+            </div>
+
+            <div class="card">
+                <h3>Social Amplification</h3>
+                <p>Built-in sharing capabilities to inspire others and multiply impact</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact -->
+    <section aria-labelledby="impact-heading">
+        <h2 id="impact-heading">Impact & Results</h2>
+
+        <div class="metrics">
+            <div class="metric">
+                <h3>Family Impact</h3>
+                <p style="color: #d4d4d4; margin-top: 1rem;">Families received critical items tailored to specific needs—medical supplies, educational materials, and necessities—providing more meaningful assistance than traditional donations</p>
+            </div>
+
+            <div class="metric">
+                <h3>Donor Impact</h3>
+                <p style="color: #d4d4d4; margin-top: 1rem;">Transparency provided donor confidence—clear visibility into how donations were used created stronger connections with communities and families</p>
+            </div>
+
+            <div class="metric">
+                <h3>Organization Impact</h3>
+                <p style="color: #d4d4d4; margin-top: 1rem;">Organizations reached broader audiences of potential donors, resulting in increased donations and greater overall impact</p>
+            </div>
+        </div>
+
+        <p style="margin-top: 3rem; font-size: 1.2rem; text-align: center; color: #d4d4d4;">The Geenees platform transformed the charitable giving landscape by creating a transparent, efficient, and personalized donation process—ensuring help reaches where it is most needed and fostering a stronger sense of community among all participants.</p>
+    </section>
+
+    <!-- Takeaways -->
+    <section aria-labelledby="takeaways-heading">
+        <h2 id="takeaways-heading">Key Takeaways</h2>
+
+        <ul class="takeaway-list">
+            <li>
+                <strong>Transparency builds trust and confidence</strong>
+                Clear visibility into how donations are used was the single most important factor in building donor confidence and encouraging repeat contributions
+            </li>
+
+            <li>
+                <strong>Storytelling creates emotional connection</strong>
+                Family narratives resonated strongly with donors—personal stories transformed abstract giving into meaningful human connections
+            </li>
+
+            <li>
+                <strong>Reducing friction increases generosity</strong>
+                Streamlining the donation flow and multi-family cart system removed barriers that prevented donors from contributing to multiple causes
+            </li>
+
+            <li>
+                <strong>Research validates before building</strong>
+                Usability testing with real users before moving to high fidelity saved significant development time and ensured we were solving the right problems
+            </li>
+
+            <li>
+                <strong>First designer role requires versatility</strong>
+                Wearing multiple hats—research, design system creation, visual design, and collaboration across teams—taught me how to prioritize and deliver impact quickly in a startup environment
+            </li>
+        </ul>
+    </section>
+
+    </main>
+
+</div>
+
+<footer class="footer" role="contentinfo">
+    <p>© John Tran • Product Designer</p>
+</footer>
+
+<!-- Lightbox Modal -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close">&times;</span>
+    <img src="" alt="" id="lightbox-img">
+</div>
+
+<script>
+function openLightbox(element) {
+    const img = element.querySelector('img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    lightbox.classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+
+// Close on Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeLightbox();
+    }
+});
+</script>
+
+</body>
+</html>
