@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UX Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">John Tran</div>
+            <button class="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="https://drive.google.com/file/d/1FWpOih-pNhgdXhZbxRBR2dGpIJnAVKxP/view?usp=sharing" target="_blank">Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h1>Hi, I'm <span class="highlight">John</span>!</h1>
+                <p>I'm currently designing in the digital investigation space at <a href="https://www.magnetforensics.com/" target="_blank" rel="noopener noreferrer" class="hero-link">Magnet Forensics</a>.</p>
+                <p class="hero-description">Product Designer with 5+ years of experience in user research, product strategy, and cross-functional collaboration to drive innovative, effective solutions.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn-primary">Let's connect!</a>
+                    <a href="#projects" class="btn-secondary">View Projects</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Recent Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="magnet-one-hero.svg" alt="Magnet One">
+                    </div>
+                    <div class="project-info">
+                        <h3>Magnet One</h3>
+                        <p>An intelligent assistant that adapts to real workflows</p>
+                        <div class="tags">
+                            <span class="tag">AI/UX</span>
+                            <span class="tag">Vision & Strategy</span>
+                            <span class="tag">Product Strategy</span>
+                        </div>
+                        <a href="#" onclick="checkPassword(event)" class="learn-more">
+                            Learn More
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="magnet-nexus-hero.svg" alt="Magnet Nexus">
+                    </div>
+                    <div class="project-info">
+                        <h3>Magnet Nexus</h3>
+                        <p>Building a cloud-based endpoint collection tool for digital forensic examiners</p>
+                        <div class="tags">
+                            <span class="tag">UX Design</span>
+                            <span class="tag">User Research</span>
+                            <span class="tag">Interaction Design</span>
+                        </div>
+                        <a href="magnet-nexus-portfolio.html" class="learn-more">
+                            Learn More
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="geenees-hero.svg" alt="Geenees">
+                    </div>
+                    <div class="project-info">
+                        <h3>Geenees</h3>
+                        <p>Building a social gifting platform connecting donors with families in need</p>
+                        <div class="tags">
+                            <span class="tag">User Research</span>
+                            <span class="tag">Design System</span>
+                            <span class="tag">Human-Centered Design</span>
+                        </div>
+                        <a href="geenees-portfolio.html" class="learn-more">
+                            Learn More
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="about-content">
+                <img src="CsmjAOzNAB5CDSib4hjmUPJSLo.avif" alt="John Tran" class="about-photo">
+                <div class="about-text">
+                    <h2>About Me</h2>
+                    <p>Hi! I'm John — a product designer currently working with Magnet Forensics.</p>
+                    <p>My design journey started with a paintbrush and canvas, which eventually turned into pixels and prototypes. Coming from a visual arts background with a love for problem solving, I found product design sits right at the sweet spot of creativity, strategy, accessibility, and business impact.</p>
+                    <p>I do my best work in cross-functional teams where design thinking can drive real change. I'm always pushing myself to grow — not just as a designer, but as a collaborator, strategist, and someone who genuinely cares about solving problems for people.</p>
+                    <a href="https://drive.google.com/file/d/1FWpOih-pNhgdXhZbxRBR2dGpIJnAVKxP/view?usp=sharing" class="resume-btn" target="_blank">View Resume</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="contact-content">
+                <h2>Let's Connect</h2>
+                <a href="mailto:tran.johnvan@gmail.com" class="contact-btn">Get in Touch</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 John Tran. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://linkedin.com/in/john-t-0a0188128" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+    </footer>
+
+    <!-- NDA Modal -->
+    <div id="ndaModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-icon">
+                <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="#5EEAD4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M14 2V8H20" stroke="#5EEAD4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M16 13H8" stroke="#5EEAD4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M16 17H8" stroke="#5EEAD4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M10 9H9H8" stroke="#5EEAD4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <h3>Let's discuss this project</h3>
+            <p>Please contact me at <a href="mailto:tran.johnvan@gmail.com">tran.johnvan@gmail.com</a></p>
+            <button class="modal-btn" onclick="window.location.href='mailto:tran.johnvan@gmail.com'">Contact Me</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        function checkPassword(event) {
+            event.preventDefault();
+            const modal = document.getElementById('ndaModal');
+            modal.style.display = 'flex';
+        }
+
+        // Close modal when clicking X
+        document.querySelector('.modal-close').addEventListener('click', function() {
+            document.getElementById('ndaModal').style.display = 'none';
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', function(event) {
+            const modal = document.getElementById('ndaModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                document.getElementById('ndaModal').style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

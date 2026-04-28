@@ -1,0 +1,149 @@
+<svg width="1400" height="800" viewBox="0 0 1400 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.2"/>
+    </filter>
+    <filter id="lightShadow">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <!-- Background (dimmed) -->
+  <rect width="1400" height="800" fill="#707070" opacity="0.6"/>
+
+  <!-- Background case list (blurred) -->
+  <g opacity="0.4">
+    <rect x="50" y="120" width="350" height="600" fill="#d0d0d0"/>
+    <rect x="50" y="140" width="350" height="50" fill="#e8e8e8"/>
+    <rect x="50" y="200" width="350" height="50" fill="#e8e8e8"/>
+    <rect x="50" y="260" width="350" height="50" fill="#e8e8e8"/>
+  </g>
+
+  <!-- Modal -->
+  <g transform="translate(350, 100)">
+    <rect width="700" height="580" rx="8" fill="#ffffff" filter="url(#shadow)"/>
+
+    <!-- Modal header -->
+    <g transform="translate(30, 30)">
+      <text x="0" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="600" fill="#333">Create collections</text>
+
+      <!-- Close button -->
+      <circle cx="640" cy="-5" r="16" fill="#f0f0f0"/>
+      <line x1="633" y1="-12" x2="647" y2="2" stroke="#666" stroke-width="2" stroke-linecap="round"/>
+      <line x1="647" y1="-12" x2="633" y2="2" stroke="#666" stroke-width="2" stroke-linecap="round"/>
+    </g>
+
+    <!-- Wizard steps sidebar -->
+    <g transform="translate(30, 80)">
+      <g>
+        <text x="0" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#999">1. Select a case</text>
+      </g>
+
+      <g transform="translate(0, 40)">
+        <text x="0" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#999">2. Select evidence sources to scan</text>
+      </g>
+
+      <g transform="translate(0, 80)">
+        <text x="0" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#0066cc">3. Select artifacts to acquire</text>
+        <rect x="-5" y="8" width="200" height="3" fill="#0066cc"/>
+      </g>
+
+      <g transform="translate(0, 120)">
+        <text x="0" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#999">4. Process settings</text>
+      </g>
+    </g>
+
+    <!-- Main content area -->
+    <g transform="translate(250, 50)">
+      <!-- OS selector buttons -->
+      <g transform="translate(0, 0)">
+        <rect width="100" height="36" rx="4" fill="#0066cc"/>
+        <text x="25" y="23" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#ffffff">⊞ Windows</text>
+
+        <rect x="115" y="0" width="85" height="36" rx="4" fill="#f0f0f0"/>
+        <text x="135" y="23" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#666">🐧 Linux</text>
+
+        <circle cx="225" cy="18" r="16" fill="#f0f0f0"/>
+        <text x="225" y="24" font-family="system-ui, -apple-system, sans-serif" font-size="16" text-anchor="middle" fill="#666">?</text>
+      </g>
+
+      <!-- SELECT ALL checkbox -->
+      <g transform="translate(0, 60)">
+        <rect width="16" height="16" rx="3" fill="#ffffff" stroke="#0066cc" stroke-width="2"/>
+        <text x="25" y="13" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#0066cc">SELECT ALL</text>
+        <text x="120" y="13" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#999">0 Selected</text>
+      </g>
+
+      <!-- Memory section -->
+      <g transform="translate(0, 100)">
+        <text x="0" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="700" fill="#333">Memory</text>
+
+        <rect y="20" width="420" height="70" rx="6" fill="#f8f8f8" stroke="#e0e0e0" stroke-width="1"/>
+
+        <rect x="15" y="35" width="16" height="16" rx="3" fill="#ffffff" stroke="#d0d0d0" stroke-width="1"/>
+
+        <text x="40" y="47" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#333">Collect and analyze endpoint RAM</text>
+        <rect x="365" y="36" width="14" height="14" rx="2" fill="#e0e0e0"/>
+
+        <text x="40" y="68" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#999">RAM captures can be large. Additional time is required to upload and process them.</text>
+      </g>
+
+      <!-- Artifacts section -->
+      <g transform="translate(0, 200)">
+        <text x="0" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="700" fill="#333">Artifacts</text>
+        <text x="100" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#0066cc">EXPAND ALL</text>
+
+        <!-- Additional Sources -->
+        <rect y="20" width="420" height="80" rx="6" fill="#f8f8f8" stroke="#e0e0e0" stroke-width="1"/>
+
+        <rect x="15" y="35" width="16" height="16" rx="3" fill="#ffffff" stroke="#d0d0d0" stroke-width="1"/>
+
+        <text x="40" y="47" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#333">Additional Sources</text>
+        <rect x="365" y="36" width="14" height="14" rx="2" fill="#e0e0e0"/>
+
+        <text x="40" y="63" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#999">Includes artifacts related to OS backups, disk images, and virtual machines.</text>
+        <text x="40" y="78" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" fill="#0066cc">SEE ARTIFACTS</text>
+
+        <!-- Application Usage -->
+        <rect y="110" width="420" height="80" rx="6" fill="#f8f8f8" stroke="#e0e0e0" stroke-width="1"/>
+
+        <rect x="15" y="125" width="16" height="16" rx="3" fill="#ffffff" stroke="#d0d0d0" stroke-width="1"/>
+
+        <text x="40" y="137" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#333">Application Usage</text>
+        <rect x="365" y="126" width="14" height="14" rx="2" fill="#e0e0e0"/>
+        <path d="M368 133 L371 136 L375 129" stroke="#666" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+        <text x="40" y="152" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#999">Includes artifacts related to application activity and use, which can verify a user's identity</text>
+        <text x="40" y="166" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#999">and reveal what a user was doing with a device at a specific period of time.</text>
+        <text x="40" y="180" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" fill="#0066cc">SEE ARTIFACTS</text>
+
+        <!-- Cloud Storage -->
+        <rect y="200" width="420" height="60" rx="6" fill="#f8f8f8" stroke="#e0e0e0" stroke-width="1"/>
+
+        <rect x="15" y="215" width="16" height="16" rx="3" fill="#ffffff" stroke="#d0d0d0" stroke-width="1"/>
+
+        <text x="40" y="227" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#333">Cloud Storage</text>
+        <rect x="365" y="216" width="14" height="14" rx="2" fill="#e0e0e0"/>
+
+        <text x="40" y="244" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#999">Includes artifacts related to cloud storage services.</text>
+      </g>
+    </g>
+
+    <!-- Footer buttons -->
+    <g transform="translate(30, 520)">
+      <text x="0" y="25" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#0066cc">Cancel</text>
+
+      <!-- Previous button -->
+      <rect x="460" y="5" width="90" height="40" rx="4" fill="#ffffff" stroke="#0066cc" stroke-width="2"/>
+      <text x="490" y="30" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#0066cc">← Back</text>
+
+      <!-- Next button -->
+      <rect x="565" y="5" width="105" height="40" rx="4" fill="#0066cc"/>
+      <text x="600" y="30" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#ffffff">Next →</text>
+
+      <!-- Create button (disabled) -->
+      <rect x="565" y="5" width="105" height="40" rx="4" fill="#e0e0e0" opacity="0"/>
+      <text x="585" y="30" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#999" opacity="0">Create cases</text>
+    </g>
+  </g>
+</svg>

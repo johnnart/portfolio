@@ -1,0 +1,145 @@
+<svg width="1200" height="600" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cardGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2a2a2a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1f1f1f;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="600" fill="#0f0f0f"/>
+
+  <!-- Main container -->
+  <g transform="translate(50, 50)">
+
+    <!-- Header Card -->
+    <rect width="1100" height="140" rx="12" fill="url(#cardGradient)" stroke="#00BFA5" stroke-width="2"/>
+
+    <!-- Avatar circle -->
+    <circle cx="90" cy="70" r="50" fill="#00BFA5"/>
+    <text x="90" y="85" font-family="system-ui, -apple-system, sans-serif" font-size="40" text-anchor="middle" fill="#0f0f0f">👩</text>
+
+    <!-- Name and bio -->
+    <text x="160" y="45" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="700" fill="#ffffff">Michelle Norman</text>
+
+    <!-- Bio text -->
+    <text x="160" y="75" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#d4d4d4">
+      <tspan x="160" dy="0">Michelle recently graduated from university with a degree in Environmental Science. Throughout her academic journey,</tspan>
+      <tspan x="160" dy="18">she actively participated in various community service projects, such as volunteering at local shelters and organizing</tspan>
+      <tspan x="160" dy="18">environmental awareness campaigns. Now, as she transitions into the professional world, she is eager to continue making</tspan>
+      <tspan x="160" dy="18">a positive impact on her community through charitable donations.</tspan>
+    </text>
+
+    <!-- Three column section -->
+    <g transform="translate(0, 170)">
+
+      <!-- User Goals -->
+      <g>
+        <rect width="350" height="280" rx="12" fill="url(#cardGradient)" stroke="#404040" stroke-width="1"/>
+        <text x="20" y="35" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#00BFA5">User Goals</text>
+
+        <g transform="translate(20, 55)">
+          <circle cx="6" cy="6" r="4" fill="#00BFA5"/>
+          <text x="20" y="11" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#d4d4d4">
+            <tspan x="20" dy="0">Support local causes like environmental</tspan>
+            <tspan x="20" dy="16">conservation and education.</tspan>
+          </text>
+
+          <circle cx="6" cy="50" r="4" fill="#00BFA5"/>
+          <text x="20" y="55" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#d4d4d4">
+            <tspan x="20" dy="0">Make informed donations with tangible</tspan>
+            <tspan x="20" dy="16">impacts.</tspan>
+          </text>
+
+          <circle cx="6" cy="94" r="4" fill="#00BFA5"/>
+          <text x="20" y="99" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#d4d4d4">
+            <tspan x="20" dy="0">Engage with causes through volunteering</tspan>
+            <tspan x="20" dy="16">and events.</tspan>
+          </text>
+
+          <circle cx="6" cy="138" r="4" fill="#00BFA5"/>
+          <text x="20" y="143" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#d4d4d4">
+            <tspan x="20" dy="0">Convenient, user-friendly donation</tspan>
+            <tspan x="20" dy="16">process.</tspan>
+          </text>
+
+          <circle cx="6" cy="182" r="4" fill="#00BFA5"/>
+          <text x="20" y="187" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#d4d4d4">
+            <tspan x="20" dy="0">Connect with like-minded individuals for</tspan>
+            <tspan x="20" dy="16">networking and support.</tspan>
+          </text>
+        </g>
+      </g>
+
+      <!-- User Needs -->
+      <g transform="translate(375, 0)">
+        <rect width="350" height="280" rx="12" fill="url(#cardGradient)" stroke="#404040" stroke-width="1"/>
+        <text x="20" y="35" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#00BFA5">User Needs</text>
+
+        <g transform="translate(20, 55)">
+          <circle cx="6" cy="6" r="4" fill="#00BFA5"/>
+          <text x="20" y="11" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#d4d4d4">
+            <tspan x="20" dy="0">Transparency and impact details on</tspan>
+            <tspan x="20" dy="16">donation platform.</tspan>
+          </text>
+
+          <circle cx="6" cy="50" r="4" fill="#00BFA5"/>
+          <text x="20" y="55" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#d4d4d4">
+            <tspan x="20" dy="0">User-friendly interface for seamless</tspan>
+            <tspan x="20" dy="16">donations.</tspan>
+          </text>
+
+          <circle cx="6" cy="94" r="4" fill="#00BFA5"/>
+          <text x="20" y="99" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#d4d4d4">
+            <tspan x="20" dy="0">Opportunities for community engagement</tspan>
+            <tspan x="20" dy="16">beyond financial contributions.</tspan>
+          </text>
+
+          <circle cx="6" cy="138" r="4" fill="#00BFA5"/>
+          <text x="20" y="143" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#d4d4d4">
+            <tspan x="20" dy="0">Personalized recommendations aligned</tspan>
+            <tspan x="20" dy="16">with interests.</tspan>
+          </text>
+
+          <circle cx="6" cy="182" r="4" fill="#00BFA5"/>
+          <text x="20" y="187" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#d4d4d4">
+            <tspan x="20" dy="0">Social connectivity to share experiences</tspan>
+            <tspan x="20" dy="16">and connect with others.</tspan>
+          </text>
+        </g>
+      </g>
+
+      <!-- Challenges -->
+      <g transform="translate(750, 0)">
+        <rect width="350" height="140" rx="12" fill="url(#cardGradient)" stroke="#404040" stroke-width="1"/>
+        <text x="20" y="35" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#00BFA5">Challenges</text>
+
+        <g transform="translate(20, 55)">
+          <circle cx="6" cy="6" r="4" fill="#00BFA5"/>
+          <text x="20" y="11" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#d4d4d4">Limited financial resources.</text>
+
+          <circle cx="6" cy="34" r="4" fill="#00BFA5"/>
+          <text x="20" y="39" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#d4d4d4">Information overload on donation options.</text>
+
+          <circle cx="6" cy="62" r="4" fill="#00BFA5"/>
+          <text x="20" y="67" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#d4d4d4">
+            <tspan x="20" dy="0">Time constraints balancing work and</tspan>
+            <tspan x="20" dy="16">personal life.</tspan>
+          </text>
+        </g>
+
+        <!-- Quote card below -->
+        <g transform="translate(0, 170)">
+          <rect width="350" height="110" rx="12" fill="#0a2e28" stroke="#00BFA5" stroke-width="2"/>
+          <text x="20" y="35" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-style="italic" fill="#5eead4">
+            <tspan x="20" dy="0">"I'm eager to support causes that</tspan>
+            <tspan x="20" dy="22">matter to me and connect with</tspan>
+            <tspan x="20" dy="22">others who share my values."</tspan>
+          </text>
+        </g>
+      </g>
+
+    </g>
+
+  </g>
+</svg>
