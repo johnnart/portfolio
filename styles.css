@@ -330,6 +330,8 @@ h2 {
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
 }
 
 .project-card:hover .project-image img {
@@ -610,6 +612,18 @@ footer {
 
     h2 {
         font-size: 2rem;
+    }
+
+    .project-image {
+        height: 250px;
+        background: var(--bg-card);
+    }
+
+    .project-image img {
+        object-fit: contain;
+        object-position: center;
+        image-rendering: auto;
+        image-rendering: -webkit-optimize-quality;
     }
 }
 
